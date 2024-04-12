@@ -22,9 +22,9 @@ def send_http_requests(url, duration):
             # Uncomment the line below if you want to print the response content
             # print(response.text)
             requests_sent += 1
-            print("{green}[+] Sent GET request to {url} (User-Agent: {user_agent}){endc}".format(green=GREEN, url=url, user_agent=user_agent, endc=ENDC))
+            print(f"{GREEN}[+] Sent GET request to {url} (User-Agent: {user_agent}){ENDC}")
         except Exception as e:
-            print("{red}[-] Error sending GET request: {error}{endc}".format(red=RED, error=str(e), endc=ENDC))
+            print(f"{RED}[-] Error sending GET request: {e}{ENDC}")
 
         try:
             user_agent = UserAgent().random
@@ -33,11 +33,11 @@ def send_http_requests(url, duration):
             # Uncomment the line below if you want to print the response content
             # print(response.text)
             requests_sent += 1
-            print("{green}[+] Sent POST request to {url} (User-Agent: {user_agent}){endc}".format(green=GREEN, url=url, user_agent=user_agent, endc=ENDC))
+            print(f"{GREEN}[+] Sent POST request to {url} (User-Agent: {user_agent}){ENDC}")
         except Exception as e:
-            print("{red}[-] Error sending POST request: {error}{endc}".format(red=RED, error=str(e), endc=ENDC))
+            print(f"{RED}[-] Error sending POST request: {e}{ENDC}")
 
-    print("Sent {count} HTTP requests to {url} in {duration} seconds.".format(count=requests_sent, url=url, duration=duration))
+    print(f"Sent {requests_sent} HTTP requests to {url} in {duration} seconds.")
 
 if __name__ == "__main__":
     # Parse command-line arguments
